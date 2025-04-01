@@ -3,12 +3,10 @@ package com.jpgedvila.dscommerce.entities;
 import jakarta.persistence.*;
 
 import java.time.Instant;
-import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "tb_order")
