@@ -29,7 +29,8 @@ public class Order {
     @OneToMany(mappedBy = "id.order")
     private Set<OrderItem> items = new HashSet<>();
 
-    public Order() {}
+    public Order() {
+    }
 
     public Order(Long id, Instant moment, OrderStatus status, User client, Payment payment) {
         this.id = id;
@@ -84,7 +85,7 @@ public class Order {
     }
 
     public List<Product> getProducts() {
-        return items.stream().map(x->x.getProduct()).toList();
+        return items.stream().map(x -> x.getProduct()).toList();
     }
 
     @Override
