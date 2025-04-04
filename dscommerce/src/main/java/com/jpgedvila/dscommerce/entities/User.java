@@ -1,6 +1,8 @@
 package com.jpgedvila.dscommerce.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+
 
 import java.time.LocalDate;
 import java.util.ArrayList;
