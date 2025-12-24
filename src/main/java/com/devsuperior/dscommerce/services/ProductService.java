@@ -22,8 +22,10 @@ import jakarta.persistence.EntityNotFoundException;
 @Service
 public class ProductService {
 
-    @Autowired
-    private ProductRepository repository;
+    private final ProductRepository repository;
+    public ProductService(ProductRepository repository) {
+        this.repository = repository;
+    }
 
     @Transactional(readOnly = true)
     public ProductDTO findById(Long id) {
@@ -35,7 +37,7 @@ public class ProductService {
     @Transactional(readOnly = true)
     public Page<ProductMinDTO> findAll(Pageable pageable) {
         Page<Product> result = repository.findAll(pageable);
-        return result.map(x -> new ProductMinDTO(x));
+        return result.map(ProductMinDTO::new);
     }
 
     @Transactional
