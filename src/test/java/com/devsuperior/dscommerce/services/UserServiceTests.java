@@ -45,7 +45,7 @@ public class UserServiceTests {
         existingEmail = "joao@gmail.com";
         nonExistingEmail = "a@gmail.com";
 
-        user = UserFactory.createCustomUser(1l,"joao",existingEmail);
+        user = UserFactory.createCustomUser(1L,"joao",existingEmail);
         userDetails = UserDetailsFactory.createCustomAdminUser(existingEmail);
 
 
